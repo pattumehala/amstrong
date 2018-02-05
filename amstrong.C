@@ -1,18 +1,23 @@
 #include<stdio.h>
 int main()
 {
-int multiple=1,num,digit,i;
+int multiple=0,num,n,digit,i;
 printf("Enter the number:");
 scanf("%d",&num);
-while(num!=0)
+  n=num;
+while(n!=0)
 {
-digit=num%10;
-for(i=1;i<=3;i++)
+digit=n%10;
+multiple=multiple+(digit*digit*digit);
+n=n/10;
+}
+if(multiple==num)
 {
-multiple=multiple*digit;
+  printf("yes");
 }
-num=num/10;
-}
-printf("%d",digit);
+  else
+  {
+    printf("no");
+  }
 return 0;
 }
